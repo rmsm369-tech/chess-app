@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player List - Chess Mind Reader</title>
+    <style>
+        body { background: #0f0f0f; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
+        h1 { color: #00ff88; text-shadow: 0 0 10px #00ff88; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; max-width: 800px; margin: 0 auto; }
+        .card { background: #1a1a1a; padding: 12px; border-radius: 8px; border: 1px solid #333; font-size: 14px; }
+        .btn { display: inline-block; margin-top: 30px; padding: 12px 24px; background: #ff3366; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Database: {{ names|length }} Players</h1>
+    <div class="grid">
+        {% for name in names %}
+            <div class="card">{{ name }}</div>
+        {% endfor %}
+    </div>
+    <a href="/" class="btn">Back to Game</a>
+</body>
+</html>
