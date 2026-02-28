@@ -8,9 +8,14 @@ app.secret_key = 'chess_magic_key'
 # --- LOAD DATABASE ---
 def load_players():
     try:
-        with open('players.json', 'r') as f:
+        # Dynamically map the absolute path to bypass relative directory issues
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        json_path = os.path.join(base_dir, 'players.json')
+        
+        with open(json_path, 'r') as f:
             return json.load(f)
-    except:
+    except Exception as e:
+        print(f"Data Load Error: {e}")
         return []
 
 # --- 20 HINTS (QUESTIONS) ---
