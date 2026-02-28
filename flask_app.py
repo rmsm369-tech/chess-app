@@ -8,7 +8,7 @@ app.secret_key = 'chess_magic_key'
 # --- LOAD DATABASE ---
 def load_players():
     try:
-        with open('/home/nyx369/mysite/players.json', 'r') as f:
+        with open('players.json', 'r') as f:
             return json.load(f)
     except:
         return []
